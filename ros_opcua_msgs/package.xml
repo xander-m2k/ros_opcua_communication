@@ -11,8 +11,7 @@
   <url type="bugtracker">https://github.com/iirob/ros_opcua_communication/issues</url>
   <author email="denis.stogl@kit.edu">Denis Štogl</author>
 
-  <buildtool_depend>rosidl_default_generators</buildtool_depend>
-  <exec_depend>rosidl_default_runtime</exec_depend>
+  <buildtool_depend>ament_cmake</buildtool_depend>
   
   <build_depend>message_generation</build_depend>
   <depend>std_msgs</depend>
