@@ -1,29 +1,34 @@
-cmake_minimum_required(VERSION 2.8.3)
+cmake_minimum_required(VERSION 3.5)
 project(ros_opcua_srvs)
+set(CMAKE_CXX_STANDARD 14)
 
-find_package(catkin REQUIRED COMPONENTS
-  message_generation
-  ros_opcua_msgs
-  std_msgs
-  std_srvs
+find_package(message_generation REQUIRED)
+find_package(ros_opcua_msgs REQUIRED)
+find_package(std_msgs REQUIRED)
+find_package(std_srvs REQUIRED)
+
+
+set(srv_files
+  "srv/CallMethod.srv"
+  "srv/Connect.srv"
+  "srv/Disconnect.srv"
+  "srv/ListNode.srv"
+  "srv/Read.srv"
+  "srv/Subscribe.srv"
+  "srv/Unsubscribe.srv"
+  "srv/Write.srv"
 )
 
-add_service_files(
-  FILES
-  CallMethod.srv
-  Connect.srv
-  Disconnect.srv
-  ListNode.srv
-  Read.srv
-  Subscribe.srv
-  Unsubscribe.srv
-  Write.srv
-)
-
-generate_messages(
+rosidl_generate_interfaces(${PROJECT_NAME}
+  ${srv_files}
   DEPENDENCIES ros_opcua_msgs std_msgs std_srvs
 )
 
-catkin_package(
- CATKIN_DEPENDS message_runtime ros_opcua_msgs std_msgs std_srvs
+ament_export_dependencies(
+  message_runtime 
+  ros_opcua_msgs 
+  std_msgs 
+  std_srvs
 )
+ament_package()
+

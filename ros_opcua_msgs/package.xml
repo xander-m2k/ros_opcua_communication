@@ -5,19 +5,20 @@
   <description>The ros_opcua_msgs package implements ROS-messages for opcua_communication metapackage.</description>
 
   <maintainer email="denis.stogl@kit.edu">Denis Štogl</maintainer>
-
   <license>LGPLv3</license>
-
   <url type="website">http://wiki.ros.org/ros_opcua_msgs</url>
   <url type="repository">https://github.com/iirob/ros_opcua_communication</url>
   <url type="bugtracker">https://github.com/iirob/ros_opcua_communication/issues</url>
-
   <author email="denis.stogl@kit.edu">Denis Štogl</author>
 
-  <buildtool_depend>catkin</buildtool_depend>
+  <buildtool_depend>rosidl_default_generators</buildtool_depend>
+  <exec_depend>rosidl_default_runtime</exec_depend>
   
   <build_depend>message_generation</build_depend>
   <depend>std_msgs</depend>
   <exec_depend>message_runtime</exec_depend>
 
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
 </package>
