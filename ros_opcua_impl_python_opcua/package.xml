@@ -12,12 +12,14 @@
   <author email="denis.stogl@kit.edu">Denis Štogl</author>
   <author email="ukdrq@student.kit.edu">Daniel Draper</author>
 
-  <buildtool_depend>rosidl_default_generators</buildtool_depend>
-  <exec_depend>rosidl_default_runtime</exec_depend>
+  <buildtool_depend>ament_cmake</buildtool_depend>
 
-  <depend>ros_opcua_msgs</depend>
-  <depend>ros_opcua_srvs</depend>
+  <build_depend>message_generation</build_depend>
+  <depend>std_msgs</depend>
+  <depend>std_srvs</depend>
   <depend>rospy</depend>
+  <exec_depend>message_runtime</exec_depend>
+  
   <export>
     <build_type>ament_cmake</build_type>
   </export>
