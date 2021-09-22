@@ -1,4 +1,4 @@
-# !/usr/bin/python
+# !/usr/bin/python3
 # thanks to https://github.com/ros-visualization/rqt_common_plugins/blob/groovy-devel/rqt_action/src/rqt_action/action_plugin.py
 import string
 import random
@@ -173,7 +173,7 @@ class OpcUaROSAction:
                         return self.recursive_create_objects(ros_server.nextname(hierachy, hierachy.index(name)), idx,
                                                              newparent)
                 # thrown when node with parent name is not existent in server
-                except IndexError, UaError:
+                except (IndexError, UaError) as e:
                     newparent = parent.add_object(
                         ua.NodeId(name + str(random.randint(0, 10000)), parent.nodeid.NamespaceIndex,
                                   ua.NodeIdType.String),
