@@ -5,8 +5,8 @@ set(CMAKE_CXX_STANDARD 14)
 # Find and load build settings from external packages
 find_package(ament_cmake REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
-find_package(std_msgs REQUIRED)
-find_package(message_generation REQUIRED)
+find_package(builtin_interfaces REQUIRED)
+
 
 
 ################################################
@@ -31,14 +31,10 @@ set(srv_files
 rosidl_generate_interfaces(${PROJECT_NAME}
   ${msg_files}
   ${srv_files}
-  DEPENDENCIES ros_opcua_msgs std_msgs std_srvs
+  DEPENDENCIES ros_opcua_msgs builtin_interfaces
 )
 
-ament_export_dependencies(
-  message_runtime
-  std_msgs
-  std_srvs
-)
+ament_export_dependencies(rosidl_default_runtime)
 ament_package()
 
 
