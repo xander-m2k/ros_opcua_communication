@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.5)
 project(ros_opcua_srvs)
 set(CMAKE_CXX_STANDARD 14)
 
+find_package(ament_cmake REQUIRED)
 find_package(message_generation REQUIRED)
 find_package(ros_opcua_msgs REQUIRED)
 find_package(std_msgs REQUIRED)

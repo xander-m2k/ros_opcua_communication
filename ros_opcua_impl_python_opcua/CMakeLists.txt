@@ -3,9 +3,9 @@ cmake_minimum_required(VERSION 3.5)
 project(ros_opcua_impl_python_opcua)
 
 # Find and load build settings from external packages
+find_package(ament_cmake REQUIRED)
 find_package(ros_opcua_msgs REQUIRED)
 find_package(ros_opcua_srvs REQUIRED)
-find_package(ament_cmake REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
 
 
