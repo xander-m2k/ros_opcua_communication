@@ -7,7 +7,8 @@ find_package(ament_cmake REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
 find_package(builtin_interfaces REQUIRED)
 
-
+install(DIRECTORY launch
+  DESTINATION share/${PROJECT_NAME})
 
 ################################################
 ## Declare ROS messages, services and actions ##
